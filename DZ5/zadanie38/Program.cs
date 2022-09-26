@@ -19,5 +19,6 @@ for (int i = 0; i < size; i++)
     Console.Write($" {array[i]}"); 
 }
 int diff = max - min;
+int C = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine();
 Console.WriteLine($"Разница между максимальным и минимальным элементом в массиве = {diff}");
