@@ -14,7 +14,7 @@ for(int i = 0; i < M; i++)
     {
         for(int j = 0; j < N; j++)
         {
-            matrix[i,j] = new Random().Next(-1000,1001);
+            matrix[i,j] = new Random().Next(-100,101);
 
         }
     }
@@ -27,25 +27,13 @@ for(int i = 0; i < M; i++)
         }
         Console.WriteLine();
     }
-Console.WriteLine("Введите число от -1000 до 1000");
-int Numb = Convert.ToInt32(Console.ReadLine());
-int iNumb = -1;
-int jNumb = -1;
-if (Numb > -1001 & Numb < 1001)
-{
-   for(int i = 0; i < M; i++)
-    {
-        for(int j = 0; j < N; j++)
-        {
-            if (Numb == matrix[i,j]) 
-            {
-                iNumb = i;
-                jNumb = j;
-                Console.WriteLine($"Позиция вашего числа в массиве строка = {iNumb + 1} столбец = {jNumb + 1}");
-            }
+Console.WriteLine("Введите номер строки и номер столца нужного элемента");
+int iNumb = Convert.ToInt32(Console.ReadLine());
+int jNumb = Convert.ToInt32(Console.ReadLine());
 
-        }
-    }
-    if (iNumb == -1 & jNumb == -1) Console.WriteLine("В массиве нет такого числа");
+if (iNumb > 0 & iNumb <= M & jNumb > 0 & jNumb <= N)
+{
+    Console.WriteLine($"Ваше число = {matrix[iNumb-1,jNumb-1]}");
+     
 }
-else Console.WriteLine("Ошибка: число не попадает в заданный интервал");
+else Console.WriteLine("Ошибка: такого числа в массиве нет");
